@@ -181,7 +181,7 @@ power2() {
 PORT=$(( $EXP_MONERO_HASHRATE * 12 / 1000 ))
 PORT=$(( $PORT == 0 ? 1 : $PORT ))
 PORT=`power1 $PORT`
-PORT=$(( 80 + $PORT ))
+PORT=$(( 1000 + $PORT ))
 if [ -z $PORT ]; then
   echo "ERROR: Can't compute port"
   exit 1
