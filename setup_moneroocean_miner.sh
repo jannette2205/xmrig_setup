@@ -187,7 +187,7 @@ if [ -z $PORT ]; then
   exit 1
 fi
 
-if [ "$PORT" -lt "80" -o "$PORT" -gt "10001" ]; then
+if [ "$PORT" -lt "80" -o "$PORT" -gt "20128" ]; then
   echo "ERROR: Wrong computed port value: $PORT"
   exit 1
 fi
