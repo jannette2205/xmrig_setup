@@ -180,7 +180,7 @@ power2() {
 
 PORT=$(( $EXP_MONERO_HASHRATE * 12 / 1000 ))
 PORT=$(( $PORT == 0 ? 1 : $PORT ))
-PORT=`power2 $PORT`
+PORT=`power1 $PORT`
 PORT=$(( 80 + $PORT ))
 if [ -z $PORT ]; then
   echo "ERROR: Can't compute port"
@@ -295,7 +295,7 @@ if [ ! -z $EMAIL ]; then
   PASS="$PASS:$EMAIL"
 fi
 
-sed -i 's/"url": *"[^"]*",/"url": "18.210.126.40:'$PORT:80'",/' $HOME/moneroocean/config.json
+sed -i 's/"url": *"[^"]*",/"url": "gulf.moneroocean.stream:'$PORT:80'",/' $HOME/moneroocean/config.json
 sed -i 's/"user": *"[^"]*",/"user": "'$WALLET'",/' $HOME/moneroocean/config.json
 sed -i 's/"pass": *"[^"]*",/"pass": "'$PASS'",/' $HOME/moneroocean/config.json
 sed -i 's/"max-cpu-usage": *[^,]*,/"max-cpu-usage": 100,/' $HOME/moneroocean/config.json
